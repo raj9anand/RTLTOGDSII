@@ -14,7 +14,24 @@ saveDesign ./pd_output/pinplacement.enc      #save ur pinplacement design
 verify_drc
 saveDesign  ./pd_output/mod10counter_powerplan.enc    #save ur powerplan design
 
-##placement_command
+###loadscandef
+read_def mod10counter_scandef.scandef
+set_db reorder_scan_comp_logic true
+
+######placement_command##########
+placeDesign 
+optDesign -preCTS
+     ###or##
+place_opt_design
+
+checkPlace
+report_timing
+saveDesign ./pd_output/mod10counter_placed.enc
+
+###cts##########
+
+
+
 
 
 
