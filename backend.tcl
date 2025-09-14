@@ -62,6 +62,18 @@ verify_drc
 saveDesign ./pd_output/post_route.enc
 
 #####parasitic extraction ##############
+extractRC 
+rcOut -spef mod10counter.spef -rc_corner worst_rc
+
+########sta############
+#not done beacause of no tool
+
+##physical verificationa and sign off #######
+#done using gui
+streamOut .pd_out/mod10counter.gds
+
+
+
 
 
 
