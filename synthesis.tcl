@@ -13,9 +13,14 @@ set top_design mod10counter
 
 ###elaborate
 elaborate mod10counter
+###to check any submodule is not connected
+check_design -unresolved
 
 ##read_sdc
 read_sdc constraint.sdc
+
+#lint_check
+report_timing -lint
 
 ###synthesis step
 syn_generic
@@ -36,5 +41,6 @@ report_gates > gates.rpt
 
 
 ##after sourcing run belo command for synthesis
+
 
 source synthesis.tcl
