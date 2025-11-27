@@ -10,3 +10,5 @@ write_sdf
 report_power
 report_inst_power <g335>     //instead of g335 put std cell instance name
 
+write_def -floorplan
+
