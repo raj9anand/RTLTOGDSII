@@ -1,4 +1,7 @@
-#######################sdc#####################################################################
+############################################################################################
+                                 Synopsys Design Constraint (SDC)
+############################################################################################
+
 #operating conditions
 set_operating_conditions
 #wire load models
@@ -19,7 +22,10 @@ set_max_fanout
 set_max_transition
 set_min_capacitance
 
-#set timing constraint
+#set timing/clock constraint
+create_clock -period 4 -name CK1 -waveform {0 2}
+set_min_pulse_width -high 2.5 [all_clocks]
+set_min_pulse_width -low 2.0 [all_clocks]
 create_generated_clock
 group_path
 set_clock_gating_check
@@ -61,3 +67,8 @@ set_min_delay
 set_multicycle_path
 
 ###############################################################################################
+                                    Static Timing Analysis(STA)
+###############################################################################################
+set_case_analysis 
+read_parasitics
+check_timing
