@@ -72,3 +72,29 @@ set_multicycle_path
 set_case_analysis 
 read_parasitics
 check_timing
+report_timing -from <register1_name> -to <register2_name>
+report_timing -from <register1_name> -to <register2_name>  -check_type hold
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
